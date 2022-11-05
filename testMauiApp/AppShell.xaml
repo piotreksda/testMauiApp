@@ -8,7 +8,12 @@
     Shell.FlyoutBehavior="Locked"
     Shell.FlyoutWidth="150"
     FlyoutBackground="Transparent">
-
+    <Shell.Resources>
+      <AppThemeBinding x:Key="FancyColor" x:Shared="false">
+        <AppThemeBinding.Light><Color>Black</Color></AppThemeBinding.Light>
+        <AppThemeBinding.Dark><Color>White</Color></AppThemeBinding.Dark>
+      </AppThemeBinding>
+    </Shell.Resources>
     <Shell.ItemTemplate>
         <DataTemplate>
             <Grid ColumnDefinitions="0.2*,0.8*">
@@ -17,7 +22,7 @@
                        HeightRequest="45" />
                 <Label Grid.Column="1"
                        Text="{Binding Title}"
-                       TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
+                       TextColor="{StaticResource FancyColor}"
                        VerticalTextAlignment="Center" />
             </Grid>
         </DataTemplate>

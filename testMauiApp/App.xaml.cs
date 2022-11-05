@@ -5,8 +5,11 @@ public partial class App : Application
 	public App()
 	{
 		InitializeComponent();
-
-		MainPage = new AppShell();
+        Application.Current.RequestedThemeChanged += (s, a) =>
+        {
+            Console.WriteLine("Theme changed");
+        };
+        MainPage = new AppShell();
 	}
 }
 
