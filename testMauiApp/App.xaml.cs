@@ -8,7 +8,7 @@ public partial class App : Application
         Console.WriteLine("Started the app");
         Application.Current.RequestedThemeChanged += (s, a) =>
         {
-            Console.WriteLine("Theme changed");
+            Console.WriteLine("Why there is no logs when change theme on macOS :(");
         };
         MainPage = new AppShell();
 	}
