@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<Shell
+    x:Class="testMauiApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:testMauiApp"
+    Shell.FlyoutBehavior="Locked"
+    Shell.FlyoutWidth="150"
+    FlyoutBackground="Transparent">
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="0.2*,0.8*">
+                <Image Source="{Binding FlyoutIcon}"
+                       Margin="5"
+                       HeightRequest="45" />
+                <Label Grid.Column="1"
+                       Text="{Binding Title}"
+                       TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <FlyoutItem Title="Main Page">
+           <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="New Page 1">
+           <ShellContent ContentTemplate="{DataTemplate local:NewPage1}" />
+    </FlyoutItem>
+</Shell>
+
