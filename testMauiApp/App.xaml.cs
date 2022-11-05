@@ -11,6 +11,7 @@ public partial class App : Application
             Console.WriteLine("Why there is no logs when change theme on macOS :( ");
         };
         MainPage = new AppShell();
+        //this is commit and push to main
 	}
 }
 
